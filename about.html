@@ -5,13 +5,57 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Demo Mih UYen</title>
+        <title>Demo Minh UYen</title>
         <link rel="icon" type="image/x-icon" href="" />
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+        
+            .circle-buttons {
+                position: fixed; /* Đặt vị trí cố định */
+                top: 20px; /* Khoảng cách từ đỉnh màn hình */
+                right: 20px; /* Khoảng cách từ bên phải màn hình */
+                z-index: 1000; /* Đặt z-index cao để chúng luôn hiển thị trên cùng */
+                display: flex; /* Sử dụng flex để sắp xếp các button */
+                flex-direction: column; /* Sắp xếp theo chiều dọc */
+                gap: 10px; /* Khoảng cách giữa các button */
+            }
+            
+            .circle-button {
+                width: 60px; /* Đường kính hình tròn */
+                height: 60px; /* Đường kính hình tròn */
+                border-radius: 50%; /* Tạo hình tròn */
+                background-color: rgb(0 0 0 / 50%); /* Màu nền */
+                color: white; /* Màu chữ */
+                display: flex; /* Hiển thị dưới dạng flex để căn giữa */
+                justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+                align-items: center; /* Căn giữa nội dung theo chiều dọc */
+                text-decoration: none; /* Xóa gạch chân */
+                font-size: 11px; /* Kích thước chữ */
+                text-transform: uppercase;
+            }
+            
+            .circle-button:hover {
+                background-color: #0056b3; /* Màu nền khi hover */
+            }
+            
+            /* Ẩn navbar khi màn hình nhỏ */
+            @media (max-width: 992px) {
+                .navbar-nav {
+                    display: none; /* Ẩn các mục trong navbar */
+                }
+                .navbar-toggler {
+                    display: none; /* Ẩn nút toggle */
+                }
+            }
+    
+            p {
+            word-break: break-word;
+          }
+        </style>
     </head>
     <body>
         <header>
@@ -27,14 +71,20 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">About Us</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">More</a></li>
-                        <!-- <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store.html">Store</a></li> -->
-                    </ul>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Travel</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">Village</a></li>
+                        <!-- <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">More</a></li> -->
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store.html">AboutUs</a></li>               </ul>
                 </div>
             </div>
         </nav>
+        <div class="circle-buttons d-lg-none">
+            <a href="index.html" class="circle-button">Travel</a>
+            <a href="about.html" class="circle-button">Village</a>
+            <!-- <a href="products.html" class="circle-button">More</a> -->
+            <a href="store.html" class="circle-button">AboutUs</a>
+        </div>
+    
         <section class="page-section about-heading">
             <div class="container">
                 <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/4.jpg" alt="..." />
@@ -58,7 +108,31 @@
                 </div>
             </div>
         </section>
-        <footer class="footer text-faded text-center py-5">
+        <section class="page-section about-heading">
+            <div class="container">
+                <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/4.jpg" alt="..." />
+                <div class="about-heading-content">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-10 mx-auto">
+                            <div class="bg-faded rounded p-5">
+                                <h2 class="section-heading mb-4">
+                                    <span class="section-heading-upper">111111111111111</span>
+                                    <span class="section-heading-lower">111111111111111</span>
+                                </h2>
+                                <p>111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</p>
+                                <p class="mb-0">
+                                    111111111111111111111111111111111111111111111
+                                    <em>lust</em>
+                                    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <a href="#"  class="bottom-right-button">^</a>
+        <footer class="footer text-faded text-center py-3">
             <div class="container"><p class="m-0 small">Copyright &copy; by minh uyen</p></div>
         </footer>
         <!-- Bootstrap core JS-->
