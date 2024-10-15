@@ -1,176 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Demo Minh UYen</title>
-        <link rel="icon" type="image/x-icon" href="" />
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <style>
-        
-            .circle-buttons {
-                position: fixed; /* Đặt vị trí cố định */
-                top: 20px; /* Khoảng cách từ đỉnh màn hình */
-                right: 20px; /* Khoảng cách từ bên phải màn hình */
-                z-index: 1000; /* Đặt z-index cao để chúng luôn hiển thị trên cùng */
-                display: flex; /* Sử dụng flex để sắp xếp các button */
-                flex-direction: column; /* Sắp xếp theo chiều dọc */
-                gap: 10px; /* Khoảng cách giữa các button */
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Demo Minh UYen</title>
+    <link rel="icon" type="image/x-icon" href="" />
+    <!-- Google fonts-->
+    <link
+        href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        .circle-buttons {
+            position: fixed;
+            /* Đặt vị trí cố định */
+            top: 20px;
+            /* Khoảng cách từ đỉnh màn hình */
+            right: 20px;
+            /* Khoảng cách từ bên phải màn hình */
+            z-index: 1000;
+            /* Đặt z-index cao để chúng luôn hiển thị trên cùng */
+            display: flex;
+            /* Sử dụng flex để sắp xếp các button */
+            flex-direction: column;
+            /* Sắp xếp theo chiều dọc */
+            gap: 10px;
+            /* Khoảng cách giữa các button */
+        }
+
+        .circle-button {
+            width: 60px;
+            /* Đường kính hình tròn */
+            height: 60px;
+            /* Đường kính hình tròn */
+            border-radius: 50%;
+            /* Tạo hình tròn */
+            background-color: rgb(0 0 0 / 50%);
+            /* Màu nền */
+            color: white;
+            /* Màu chữ */
+            display: flex;
+            /* Hiển thị dưới dạng flex để căn giữa */
+            justify-content: center;
+            /* Căn giữa nội dung theo chiều ngang */
+            align-items: center;
+            /* Căn giữa nội dung theo chiều dọc */
+            text-decoration: none;
+            /* Xóa gạch chân */
+            font-size: 11px;
+            /* Kích thước chữ */
+            text-transform: uppercase;
+        }
+
+        .circle-button:hover {
+            background-color: #0056b3;
+            /* Màu nền khi hover */
+        }
+
+        /* Ẩn navbar khi màn hình nhỏ */
+        @media (max-width: 992px) {
+            .navbar-nav {
+                display: none;
+                /* Ẩn các mục trong navbar */
             }
-            
-            .circle-button {
-                width: 60px; /* Đường kính hình tròn */
-                height: 60px; /* Đường kính hình tròn */
-                border-radius: 50%; /* Tạo hình tròn */
-                background-color: rgb(0 0 0 / 50%); /* Màu nền */
-                color: white; /* Màu chữ */
-                display: flex; /* Hiển thị dưới dạng flex để căn giữa */
-                justify-content: center; /* Căn giữa nội dung theo chiều ngang */
-                align-items: center; /* Căn giữa nội dung theo chiều dọc */
-                text-decoration: none; /* Xóa gạch chân */
-                font-size: 11px; /* Kích thước chữ */
-                text-transform: uppercase;
+
+            .navbar-toggler {
+                display: none;
+                /* Ẩn nút toggle */
             }
-            
-            .circle-button:hover {
-                background-color: #0056b3; /* Màu nền khi hover */
-            }
-            
-            /* Ẩn navbar khi màn hình nhỏ */
-            @media (max-width: 992px) {
-                .navbar-nav {
-                    display: none; /* Ẩn các mục trong navbar */
-                }
-                .navbar-toggler {
-                    display: none; /* Ẩn nút toggle */
-                }
-            }
-    
-            p {
+        }
+
+        p {
             word-break: break-word;
-          }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1 class="site-heading text-center text-faded d-none d-lg-block">
-                <span class="site-heading-upper text-primary mb-3">111111111111111111111111111111111</span>
-                <span class="site-heading-lower">11111111111111111</span>
-            </h1>
-        </header>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">11111111111111111</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Travel</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">Village</a></li>
-                        <!-- <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">More</a></li> -->
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store.html">AboutUs</a></li>                 </ul>
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="site-heading text-center text-faded d-none d-lg-block">
+            <span class="site-heading-upper text-primary mb-3">111111111111111111111111111111111</span>
+            <span class="site-heading-lower">11111111111111111</span>
+        </h1>
+    </header>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Mẹo du lịch</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Travel</a></li>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">Village</a></li>
+                    <!-- <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">More</a></li> -->
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store.html">AboutUs</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="circle-buttons d-lg-none">
+        <a href="index.html" class="circle-button">Travel</a>
+        <a href="about.html" class="circle-button">Village</a>
+        <!-- <a href="products.html" class="circle-button">More</a> -->
+        <a href="store.html" class="circle-button">AboutUs</a>
+    </div>
+
+    <section class="page-section cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <div class="cta-inner bg-faded text-center rounded">
+                        <h2 class="section-heading mb-5">
+                            <span class="section-heading-upper">Du lịch</span>
+                            <span class="section-heading-lower">Cần Thơ </span>
+                        </h2>
+                        <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Monday
+                                <span class="ms-auto">Cái Răng</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Tuesday
+                                <span class="ms-auto">Chợ nổi</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Monday
+                                <span class="ms-auto">Bến Ninh Kiều</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Monday
+                                <span class="ms-auto">Cồn Sơn</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Monday
+                                <span class="ms-auto">Cái Răng</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Monday
+                                <span class="ms-auto">Bến Ninh Kiều</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Sunday
+                                <span class="ms-auto">Bến Ninh Kiều</span>
+                            </li>
+                        </ul>
+                        <p class="address mb-5">
+                            <em>
+                                <strong>111111111111111</strong>
+                                <br />
+                                111111111111111
+                            </em>
+                        </p>
+                        <p class="mb-0">
+                            <small><em>111111111111111</em></small>
+                            <br />
+                            11111111111111
+                        </p>
+                    </div>
                 </div>
             </div>
-        </nav>
-        <div class="circle-buttons d-lg-none">
-            <a href="index.html" class="circle-button">Travel</a>
-            <a href="about.html" class="circle-button">Village</a>
-            <!-- <a href="products.html" class="circle-button">More</a> -->
-            <a href="store.html" class="circle-button">AboutUs</a>
         </div>
-    
-        <section class="page-section cta">
-            <div class="container">
+    </section>
+    <section class="page-section about-heading">
+        <div class="container">
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/2.jpg" alt="..." />
+            <div class="about-heading-content">
                 <div class="row">
-                    <div class="col-xl-9 mx-auto">
-                        <div class="cta-inner bg-faded text-center rounded">
-                            <h2 class="section-heading mb-5">
-                                <span class="section-heading-upper">111111111111111</span>
-                                <span class="section-heading-lower">111111111111111</span>
+                    <div class="col-xl-9 col-lg-10 mx-auto">
+                        <div class="bg-faded rounded p-5">
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper">Thành Phố Cần Thơ Thành Phố Cần Thơ </span>
+                                <span class="section-heading-lower">Thành Phố Cần Thơ </span>
                             </h2>
-                            <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                   123123
-                                    <span class="ms-auto">321321</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                    123123
-                                    <span class="ms-auto">111111111111111</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                    123123
-                                    <span class="ms-auto">111111111111111</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                    123123
-                                    <span class="ms-auto">111111111111111</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                   123123
-                                    <span class="ms-auto">111111111111111</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                    123123
-                                    <span class="ms-auto">111111111111111</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                   123123
-                                    <span class="ms-auto">111111111111111</span>
-                                </li>
-                            </ul>
-                            <p class="address mb-5">
-                                <em>
-                                    <strong>111111111111111</strong>
-                                    <br />
-                                    111111111111111
-                                </em>
+                            <p>Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
+                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ .
                             </p>
                             <p class="mb-0">
-                                <small><em>111111111111111</em></small>
-                                <br />
-                                11111111111111
+                                Thành Phố Cần Thơ
+                                <em>Cần Thơ </em>
+                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần
+                                Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="page-section about-heading">
-            <div class="container">
-                <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/2.jpg" alt="..." />
-                <div class="about-heading-content">
-                    <div class="row">
-                        <div class="col-xl-9 col-lg-10 mx-auto">
-                            <div class="bg-faded rounded p-5">
-                                <h2 class="section-heading mb-4">
-                                    <span class="section-heading-upper">111111111111111111111111111111</span>
-                                    <span class="section-heading-lower">111111111111111</span>
-                                </h2>
-                                <p>111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111.</p>
-                                <p class="mb-0">
-                                    111111111111111111111111111111
-                                    <em>1111111</em>
-                                    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <a href="#" class="bottom-right-button">^</a>
-        <footer class="footer text-faded text-center py-3">
-            <div class="container"><p class="m-0 small">Copyright &copy; by minh uyen</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+        </div>
+    </section>
+    <a href="#" class="bottom-right-button">^</a>
+    <footer class="footer text-faded text-center py-3">
+        <div class="container">
+            <p class="m-0 small">Copyright &copy; by minh uyen</p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
 </html>
