@@ -36,9 +36,9 @@
         }
 
         .circle-button {
-            width: 60px;
+            width: 50px;
             /* Đường kính hình tròn */
-            height: 60px;
+            height: 50px;
             /* Đường kính hình tròn */
             border-radius: 50%;
             /* Tạo hình tròn */
@@ -57,24 +57,6 @@
             font-size: 11px;
             /* Kích thước chữ */
             text-transform: uppercase;
-        }
-
-        .circle-button:hover {
-            background-color: #0056b3;
-            /* Màu nền khi hover */
-        }
-
-        /* Ẩn navbar khi màn hình nhỏ */
-        @media (max-width: 992px) {
-            .navbar-nav {
-                display: none;
-                /* Ẩn các mục trong navbar */
-            }
-
-            .navbar-toggler {
-                display: none;
-                /* Ẩn nút toggle */
-            }
         }
 
         .fb-button {
@@ -101,8 +83,60 @@
             text-transform: uppercase;
         }
 
+        .circle-button:hover {
+            background-color: #0056b3;
+            /* Màu nền khi hover */
+        }
+
+        /* Ẩn navbar khi màn hình nhỏ */
+        @media (max-width: 992px) {
+            .navbar-nav {
+                display: none;
+                /* Ẩn các mục trong navbar */
+            }
+
+            .navbar-toggler {
+                display: none;
+                /* Ẩn nút toggle */
+            }
+        }
+
         p {
             word-break: break-word;
+        }
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: -200% 0;
+            }
+
+            50% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .product-item-title .bg-faded {
+            background: linear-gradient(270deg, rgb(255, 179, 179), rgb(255, 220, 156), rgb(255, 255, 172), rgb(151, 247, 151), rgb(166, 166, 253), rgb(255, 167, 255));
+            /* Đường gradient */
+            background-size: 400% 100%;
+            /* Kích thước lớn hơn để hiệu ứng mượt mà */
+            animation: gradient-animation 30s ease infinite;
+            /* Áp dụng hiệu ứng */
+            border-radius: 10px;
+            /* Đường viền bo tròn */
+            padding: 15px;
+            /* Khoảng cách bên trong */
+            color: white;
+            /* Màu chữ */
+        }
+
+        .product-item-img {
+            border-radius: 10px;
+            /* Đường viền bo tròn */
         }
     </style>
 </head>
@@ -110,88 +144,109 @@
 <body>
     <header>
         <h1 class="site-heading text-center text-faded d-none d-lg-block">
-            <span class="site-heading-upper text-primary mb-3">Đi Muôn Nơi</span>
-            <span class="site-heading-lower">Thành Phố Cần Thơ </span>
+            <span class="site-heading-upper text-primary mb-3">Đi Muôn Nơi
+            </span>
+            <span class="site-heading-lower"> Thành Phố Cần Thơ </span>
         </h1>
     </header>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
         <div class="container">
-            <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Đi Muôn Nơi </a>
+            <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html"> Thành Phố Cần Thơ</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSuppo     rtedContent"
-                aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Travel</a></li>
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="more.html">Village</a></li>
-                    <!-- <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">More</a></li> -->
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="meoDuLich.html">Tips</a>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="eat.html">Junket</a></li>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="hotel.html">Hotel</a></li>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="more.html">More</a></li>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="meoDuLich.html">Tips</a></li>
                     <li class="nav-item px-lg-4">
                         <a class="nav-link" href="https://www.facebook.com/profile.php?id=61567367394026"
                             target="_blank" style="color: rgb(26, 34, 255);">
                             <i class="fa-brands fa-facebook"></i>
                         </a>
                     </li>
-                    </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="circle-buttons d-lg-none">
-        <a href="index.html" class="circle-button">Travel</a>
-        <a href="more.html" class="circle-button">Village</a>
-        <!-- <a href="products.html" class="circle-button">More</a> -->
+        <a href="index.html" class="circle-button">Home</a>
+        <a href="eat.html" class="circle-button">Junket</a>
+        <a href="hotel.html" class="circle-button">Hotel</a>
+        <a href="more.html" class="circle-button">More</a>
         <a href="meoDuLich.html" class="circle-button">Tips</a>
         <a href="https://www.facebook.com/profile.php?id=61567367394026" class="fb-button"> <i
                 class="fa-brands fa-facebook"></i></a>
     </div>
 
-    <section class="page-section about-heading">
+    <section class="page-section">
         <div class="container">
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/cho.png" alt="..." />
-            <div class="about-heading-content">
-                <div class="row">
-                    <div class="col-xl-9 col-lg-10 mx-auto">
-                        <div class="bg-faded rounded p-5">
-                            <h2 class="section-heading mb-4">
-                                <span class="section-heading-upper">Thành Phố Cần Thơ </span>
-                                <span class="section-heading-lower">Thành Phố Cần Thơ </span>
-                            </h2>
-                            <p>Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
-                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ </p>
-                            <p class="mb-0">
-                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
-                                <em>lust</em>
-                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần
-                                Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
-                            </p>
-                        </div>
+            <div class="product-item">
+                <div class="product-item-title d-flex">
+                    <div class="bg-faded p-2 d-flex ms-auto rounded">
+                        <h2 class="section-heading mb-0">
+                            <span class="section-heading-upper">Thành Phố Cần Thơ </span>
+                            <span class="section-heading-lower">Thành Phố Cần Thơ</span>
+                        </h2>
+                    </div>
+                </div>
+                <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/cho.png"
+                    alt="..." />
+                <div class="product-item-description d-flex me-auto">
+                    <div class="bg-faded p-5 rounded">
+                        <p class="mb-0"> Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành
+                            Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành
+                            Phố Cần Thơ</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="page-section about-heading">
+    <section class="page-section">
         <div class="container">
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/ninhKieu.png" alt="..." />
-            <div class="about-heading-content">
-                <div class="row">
-                    <div class="col-xl-9 col-lg-10 mx-auto">
-                        <div class="bg-faded rounded p-5">
-                            <h2 class="section-heading mb-4">
-                                <span class="section-heading-upper">111111111111111</span>
-                                <span class="section-heading-lower">111111111111111</span>
-                            </h2>
-                            <p>Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
-                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ </p>
-                            <p class="mb-0">
-                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
-                                <em>lust</em>
-                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần
-                                Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
-                            </p>
-                        </div>
+            <div class="product-item">
+                <div class="product-item-title1 d-flex">
+                    <div class="bg-faded p-2 d-flex me-auto rounded">
+                        <h2 class="section-heading mb-0">
+                            <span class="section-heading-upper">Thành Phố Cần Thơ </span>
+                            <span class="section-heading-lower">Cần Thơ </span>
+                        </h2>
+                    </div>
+                </div>
+                <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/canTho.png"
+                    alt="..." />
+                <div class="product-item-description1 d-flex ms-auto">
+                    <div class="bg-faded p-5 rounded">
+                        <p class="mb-0">Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành
+                            Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành
+                            Phố Cần Thơ Thành Phố Cần Thơ </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-section">
+        <div class="container">
+            <div class="product-item">
+                <div class="product-item-title d-flex">
+                    <div class="bg-faded p-2 d-flex ms-auto rounded">
+                        <h2 class="section-heading mb-0">
+                            <span class="section-heading-upper">Thành Phố Cần Thơ </span>
+                            <span class="section-heading-lower">Thành Phố Cần Thơ</span>
+                        </h2>
+                    </div>
+                </div>
+                <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/cho.png"
+                    alt="..." />
+                <div class="product-item-description d-flex me-auto">
+                    <div class="bg-faded p-5 rounded">
+                        <p class="mb-0"> Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành
+                            Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành
+                            Phố Cần Thơ</p>
                     </div>
                 </div>
             </div>
