@@ -14,7 +14,7 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <link rel="icon" type="image/x-icon" href="img/image.png" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <style>
@@ -138,6 +138,13 @@
             border-radius: 10px;
             /* Đường viền bo tròn */
         }
+
+        .carousel-item img {
+            max-height: 400px;
+            /* Adjust height as needed */
+            object-fit: cover;
+            /* Ensures the image covers the area */
+        }
     </style>
 </head>
 
@@ -161,7 +168,7 @@
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="eat.html">Junket</a></li>
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="hotel.html">Hotel</a></li>
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="more.html">More</a></li>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="more.html">Location</a></li>
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="meoDuLich.html">Tips</a></li>
                     <li class="nav-item px-lg-4">
                         <a class="nav-link" href="https://www.facebook.com/profile.php?id=61567367394026"
@@ -177,7 +184,7 @@
         <a href="index.html" class="circle-button">Home</a>
         <a href="eat.html" class="circle-button">Junket</a>
         <a href="hotel.html" class="circle-button">Hotel</a>
-        <a href="more.html" class="circle-button">More</a>
+        <a href="more.html" class="circle-button">Location</a>
         <a href="meoDuLich.html" class="circle-button">Tips</a>
         <a href="https://www.facebook.com/profile.php?id=61567367394026" class="fb-button"> <i
                 class="fa-brands fa-facebook"></i></a>
@@ -190,45 +197,56 @@
                     <div class="bg-faded p-2 d-flex ms-auto rounded">
                         <h2 class="section-heading mb-0">
                             <span class="section-heading-upper">Thành Phố Cần Thơ </span>
-                            <span class="section-heading-lower">Thành Phố Cần Thơ</span>
+                            <span class="section-heading-lower">Đền Thờ Vua Hùng </span>
                         </h2>
                     </div>
                 </div>
-                <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/cho.png"
-                    alt="..." />
+                <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/moreDiaDiem/denHung (1).jpg" class="d-block w-100"
+                                alt="Đền Thờ Vua Hùng Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/moreDiaDiem/denHung (4).jpg" class=" d-block w-100"
+                                alt="Đền Thờ Vua Hùng Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/moreDiaDiem/denHung (3).jpg" class="d-block w-100"
+                                alt="Đền Thờ Vua Hùng Image 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel1"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel1"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
                 <div class="product-item-description d-flex me-auto">
                     <div class="bg-faded p-5 rounded">
-                        <p class="mb-0"> Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành
-                            Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành
-                            Phố Cần Thơ</p>
+                        <div class="address mb-3">
+                            <strong>Địa chỉ:</strong> Võ Văn Kiệt, Bình Thuỷ, Bình Thủy, Cần Thơ, Vietnam
+                        </div>
+                        <div class="maps mb-3">
+                            <strong>GG Maps:</strong> <a href="https://maps.app.goo.gl/2JdaxYMetb5CXKxj8"
+                                target="_blank">Xem bản đồ</a>
+                        </div>
+                        <div class="info">
+                            <p>Đền tọa lạc tại vị trí gần trung tâm thành phố nên du khách có thể dễ dàng di chuyển đến
+                                đây bằng các phương tiện xe máy, ô tô, xe bus để khám phá kiến trúc, lịch sử, văn hóa
+                                lịch sử hào hùng, đặc sắc của dân tộc.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="page-section">
-        <div class="container">
-            <div class="product-item">
-                <div class="product-item-title1 d-flex">
-                    <div class="bg-faded p-2 d-flex me-auto rounded">
-                        <h2 class="section-heading mb-0">
-                            <span class="section-heading-upper">Thành Phố Cần Thơ </span>
-                            <span class="section-heading-lower">Cần Thơ </span>
-                        </h2>
-                    </div>
-                </div>
-                <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/canTho.png"
-                    alt="..." />
-                <div class="product-item-description1 d-flex ms-auto">
-                    <div class="bg-faded p-5 rounded">
-                        <p class="mb-0">Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành
-                            Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành
-                            Phố Cần Thơ Thành Phố Cần Thơ </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <section class="page-section">
         <div class="container">
             <div class="product-item">
@@ -236,22 +254,114 @@
                     <div class="bg-faded p-2 d-flex ms-auto rounded">
                         <h2 class="section-heading mb-0">
                             <span class="section-heading-upper">Thành Phố Cần Thơ </span>
-                            <span class="section-heading-lower">Thành Phố Cần Thơ</span>
+                            <span class="section-heading-lower">Thiền viện Trúc Lâm Phương Nam</span>
                         </h2>
                     </div>
                 </div>
-                <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/cho.png"
-                    alt="..." />
+                <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/moreDiaDiem/thienVien.jpg" class="d-block w-100"
+                                alt="Thiền viện Trúc Lâm Phương Nam Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/moreDiaDiem/thienvien2.jpg" class="d-block w-100"
+                                alt="Thiền viện Trúc Lâm Phương Nam Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/moreDiaDiem/thienVien.jpg" class="d-block w-100"
+                                alt="Thiền viện Trúc Lâm Phương Nam Image 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel2"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel2"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
                 <div class="product-item-description d-flex me-auto">
                     <div class="bg-faded p-5 rounded">
-                        <p class="mb-0"> Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành
-                            Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành
-                            Phố Cần Thơ</p>
+                        <div class="address mb-3">
+                            <strong>Địa chỉ:</strong> Tỉnh lộ 923, Mỹ Khánh, Phong Điền, Cần Thơ, Vietnam
+                        </div>
+                        <div class="maps mb-3">
+                            <strong>GG Maps:</strong> <a href="https://maps.app.goo.gl/Pf8gXr8mS2jFpEum7"
+                                target="_blank">Xem bản đồ</a>
+                        </div>
+                        <div class="info">
+                            <p>Thiền viện được xây dựng theo kiến trúc Phật giáo Nam tông, nơi đây vừa là điểm dừng chân
+                                nghỉ dưỡng, vừa là nơi để tìm hiểu về Phật giáo và thưởng thức cảnh đẹp thiên nhiên.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <section class="page-section">
+        <div class="container">
+            <div class="product-item">
+                <div class="product-item-title d-flex">
+                    <div class="bg-faded p-2 d-flex ms-auto rounded">
+                        <h2 class="section-heading mb-0">
+                            <span class="section-heading-upper">Thành Phố Cần Thơ </span>
+                            <span class="section-heading-lower">Bến Ninh Kiều </span>
+                        </h2>
+                    </div>
+                </div>
+                <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/cho.png" class="d-block w-100" alt="Bến Ninh Kiều  Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/cho.png" class="d-block w-100" alt="Bến Ninh Kiều  Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/cho.png" class="d-block w-100" alt="Bến Ninh Kiều Image 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel1"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel1"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="product-item-description d-flex me-auto">
+                    <div class="bg-faded p-5 rounded">
+                        <div class="address mb-3">
+                            <strong>Địa chỉ:</strong> 106 Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Vietnam
+                        </div>
+                        <div class="maps mb-3">
+                            <strong>GG Maps:</strong> <a href="https://maps.app.goo.gl/jEt4h53Ywj9r42iR7"
+                                target="_blank">Xem bản đồ</a>
+                        </div>
+                        <div class="info">
+                            <p>Đền tọa lạc tại vị trí gần trung tâm thành phố nên du khách có thể dễ dàng di chuyển đến
+                                đây bằng các phương tiện xe máy, ô tô, xe bus để khám phá kiến trúc, lịch sử, văn hóa
+                                lịch sử hào hùng, đặc sắc của dân tộc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
     <a href="#" class="bottom-right-button">^</a>
     <footer class="footer text-faded text-center py-3">
         <div class="container">
