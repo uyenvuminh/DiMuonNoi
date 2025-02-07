@@ -169,17 +169,17 @@
 
         .logo-image {
             width: 50px;
-            /* Kích thước logo nhỏ */
+            /*  logo nhỏ */
             height: 50px;
-            /* Kích thước logo nhỏ */
+            /* logo nhỏ */
             border-radius: 50%;
             /* Làm tròn */
             margin-right: 5px;
-            /* Khoảng cách giữa logo và tên */
+            /* khoảng cách giữa logo và tên */
             object-fit: cover;
-            /* Đảm bảo hình ảnh không bị méo */
+            /* hình ảnh không bị méo */
             vertical-align: middle;
-            /* Căn giữa logo với văn bản */
+            /* căn giữa logo */
         }
     </style>
 </head>
@@ -313,57 +313,7 @@
             </div>
         </div>
     </section>
-    <!-- <section class="page-section about-heading">
-        <div class="container">
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/cho.png" alt="..." />
-            <div class="about-heading-content">
-                <div class="row">
-                    <div class="col-xl-9 col-lg-10 mx-auto">
-                        <div class="bg-faded rounded p-5">
-                            <h2 class="section-heading mb-4">
-                                <span class="section-heading-upper">Thành Phố Cần Thơ </span>
-                                <span class="section-heading-lower">Thành Phố Cần Thơ </span>
-                            </h2>
-                            <p>Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
-                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ </p>
-                            <p class="mb-0">
-                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
-                                <em>lust</em>
-                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần
-                                Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="page-section about-heading">
-        <div class="container">
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/ninhKieu.png" alt="..." />
-            <div class="about-heading-content">
-                <div class="row">
-                    <div class="col-xl-9 col-lg-10 mx-auto">
-                        <div class="bg-faded rounded p-5">
-                            <h2 class="section-heading mb-4">
-                                <span class="section-heading-upper">111111111111111</span>
-                                <span class="section-heading-lower">111111111111111</span>
-                            </h2>
-                            <p>Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
-                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ </p>
-                            <p class="mb-0">
-                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
-                                <em>lust</em>
-                                Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ Thành Phố Cần
-                                Thơ Thành Phố Cần Thơ Thành Phố Cần Thơ
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
+   
     <div class="image-selection">
         <img src="https://th.bing.com/th/id/OIP.RM-SGSahL20cdhlR188gwgHaHZ?w=169&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" onclick="addPresetImage(this.src)">
         <img src="https://th.bing.com/th/id/OIP.tmfa5CnxXEh0J5cNLNWVKwHaEK?w=272&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" onclick="addPresetImage(this.src)">
@@ -393,18 +343,18 @@
                 .then(blob => {
                     const reader = new FileReader();
                     reader.onloadend = () => {
-                        callback(reader.result); // Trả về base64
+                        callback(reader.result); // trả về base64
                     };
                     reader.readAsDataURL(blob);
                 })
-                .catch(err => console.error("Lỗi khi tải hình ảnh từ URL:", err));
+                .catch(err => console.error("Lỗi tải hình ảnh URL:", err));
         }
     
         function addPresetImage(src) {
             const img = document.createElement('img');
     
             if (src.startsWith("http")) {
-                // Nếu là URL, tải về dưới dạng base64
+                // lấy URL, tải về  dạng base64
                 loadImageFromUrl(src, (base64) => {
                     img.src = base64;
                     img.classList.add('draggable');
@@ -415,7 +365,7 @@
                     document.getElementById('canvas-container').appendChild(img);
                 });
             } else {
-                // Nếu là file tải lên, sử dụng trực tiếp src
+                //file tải lên, dùng src
                 img.src = src;
                 img.classList.add('draggable');
                 img.style.width = '150px';
@@ -429,7 +379,7 @@
         function addText() {
             const textDiv = document.createElement('div');
             textDiv.contentEditable = true;
-            textDiv.textContent = 'Nhập chữ vào đây';
+            textDiv.textContent = 'nhập chữ tại đây';
             textDiv.classList.add('draggable');
             textDiv.style.top = '50px';
             textDiv.style.left = '50px';
@@ -446,14 +396,14 @@
         function makeDraggable(element) {
             let offsetX, offsetY, isDragging = false;
     
-            // Xử lý trên desktop
+            // chạm bằng chuột máy tính
             element.addEventListener('mousedown', (e) => {
                 isDragging = true;
                 offsetX = e.clientX - element.offsetLeft;
                 offsetY = e.clientY - element.offsetTop;
             });
     
-            // Xử lý trên thiết bị di động
+            //chạm trên điện thoại
             element.addEventListener('touchstart', (e) => {
                 isDragging = true;
                 const touch = e.touches[0];
@@ -461,7 +411,7 @@
                 offsetY = touch.clientY - element.offsetTop;
             });
     
-            // Xử lý di chuyển
+            // di chuyển
             document.addEventListener('mousemove', (e) => {
                 if (isDragging) {
                     element.style.left = (e.clientX - offsetX) + 'px';
@@ -469,7 +419,7 @@
                 }
             });
     
-            // Xử lý di chuyển trên thiết bị di động
+            // di chuyển trên điện thoại
             document.addEventListener('touchmove', (e) => {
                 if (isDragging) {
                     const touch = e.touches[0];
@@ -478,12 +428,12 @@
                 }
             });
     
-            // Khi kết thúc kéo thả
+            // dừng kéo thả
             document.addEventListener('mouseup', () => {
                 isDragging = false;
             });
     
-            // Khi kết thúc kéo thả trên thiết bị di động
+            // dừng kéo thả trên điện thoại
             document.addEventListener('touchend', () => {
                 isDragging = false;
             });
@@ -509,7 +459,7 @@
     
             setTimeout(() => {
                 const link = document.createElement('a');
-                link.download = 'thiet-ke.png';
+                link.download = 'dimuonnoi.png';
                 link.href = canvas.toDataURL('image/png');
                 link.click();
             }, 500);
