@@ -402,7 +402,7 @@
     
         function addPresetImage(src) {
             const img = document.createElement('img');
-            
+    
             if (src.startsWith("http")) {
                 // Nếu là URL, tải về dưới dạng base64
                 loadImageFromUrl(src, (base64) => {
@@ -445,20 +445,46 @@
     
         function makeDraggable(element) {
             let offsetX, offsetY, isDragging = false;
+    
+            // Xử lý trên desktop
             element.addEventListener('mousedown', (e) => {
                 isDragging = true;
                 offsetX = e.clientX - element.offsetLeft;
                 offsetY = e.clientY - element.offsetTop;
             });
-            
+    
+            // Xử lý trên thiết bị di động
+            element.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                const touch = e.touches[0];
+                offsetX = touch.clientX - element.offsetLeft;
+                offsetY = touch.clientY - element.offsetTop;
+            });
+    
+            // Xử lý di chuyển
             document.addEventListener('mousemove', (e) => {
                 if (isDragging) {
                     element.style.left = (e.clientX - offsetX) + 'px';
                     element.style.top = (e.clientY - offsetY) + 'px';
                 }
             });
-            
+    
+            // Xử lý di chuyển trên thiết bị di động
+            document.addEventListener('touchmove', (e) => {
+                if (isDragging) {
+                    const touch = e.touches[0];
+                    element.style.left = (touch.clientX - offsetX) + 'px';
+                    element.style.top = (touch.clientY - offsetY) + 'px';
+                }
+            });
+    
+            // Khi kết thúc kéo thả
             document.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+    
+            // Khi kết thúc kéo thả trên thiết bị di động
+            document.addEventListener('touchend', () => {
                 isDragging = false;
             });
         }
@@ -469,7 +495,7 @@
             const container = document.getElementById('canvas-container');
     
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
+    
             const elements = Array.from(container.children);
             elements.forEach(element => {
                 if (element.tagName === 'IMG') {
@@ -480,7 +506,7 @@
                     ctx.fillText(element.textContent, parseInt(element.style.left), parseInt(element.style.top) + parseInt(element.style.fontSize));
                 }
             });
-            
+    
             setTimeout(() => {
                 const link = document.createElement('a');
                 link.download = 'thiet-ke.png';
@@ -489,6 +515,7 @@
             }, 500);
         }
     </script>
+    
     
 
 
