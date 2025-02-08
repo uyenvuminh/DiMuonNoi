@@ -1,219 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Đi muôn nơi</title>
     <link rel="icon" type="image/x-icon" href="" />
     <!-- Google fonts-->
     <link
-        href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMpM/lV4y3nNZ2D9Uemw3M/1XMQ7iwgM8tTgF8" crossorigin="anonymous">
+      href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMpM/lV4y3nNZ2D9Uemw3M/1XMQ7iwgM8tTgF8"
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="img/image.png" />
 
-
     <style>
-        .circle-buttons {
-            position: fixed;
-            /* Đặt vị trí cố định */
-            top: 20px;
-            /* Khoảng cách từ đỉnh màn hình */
-            right: 20px;
-            /* Khoảng cách từ bên phải màn hình */
-            z-index: 1000;
-            /* Đặt z-index cao để chúng luôn hiển thị trên cùng */
-            display: flex;
-            /* Sử dụng flex để sắp xếp các button */
-            flex-direction: column;
-            /* Sắp xếp theo chiều dọc */
-            gap: 10px;
-            /* Khoảng cách giữa các button */
+      .circle-buttons {
+        position: fixed;
+        /* Đặt vị trí cố định */
+        top: 20px;
+        /* Khoảng cách từ đỉnh màn hình */
+        right: 20px;
+        /* Khoảng cách từ bên phải màn hình */
+        z-index: 1000;
+        /* Đặt z-index cao để chúng luôn hiển thị trên cùng */
+        display: flex;
+        /* Sử dụng flex để sắp xếp các button */
+        flex-direction: column;
+        /* Sắp xếp theo chiều dọc */
+        gap: 10px;
+        /* Khoảng cách giữa các button */
+      }
+
+      .circle-button {
+        width: 60px;
+        /* Đường kính hình tròn */
+        height: 60px;
+        /* Đường kính hình tròn */
+        border-radius: 50%;
+        /* Tạo hình tròn */
+        background-color: rgb(0 0 0 / 50%);
+        /* Màu nền */
+        color: white;
+        /* Màu chữ */
+        display: flex;
+        /* Hiển thị dưới dạng flex để căn giữa */
+        justify-content: center;
+        /* Căn giữa nội dung theo chiều ngang */
+        align-items: center;
+        /* Căn giữa nội dung theo chiều dọc */
+        text-decoration: none;
+        /* Xóa gạch chân */
+        font-size: 11px;
+        /* Kích thước chữ */
+        text-transform: uppercase;
+      }
+
+      .fb-button {
+        /* Đường kính hình tròn */
+
+        /* Đường kính hình tròn */
+
+        /* Tạo hình tròn */
+
+        /* Màu nền */
+        color: rgb(26, 34, 255);
+        /* Màu chữ */
+        display: flex;
+        /* Hiển thị dưới dạng flex để căn giữa */
+        justify-content: center;
+        /* Căn giữa nội dung theo chiều ngang */
+        align-items: center;
+        /* Căn giữa nội dung theo chiều dọc */
+        text-decoration: none;
+        /* Xóa gạch chân */
+        font-size: 20px;
+        /* Kích thước chữ */
+        text-transform: uppercase;
+      }
+
+      .circle-button:hover {
+        background-color: #0056b3;
+        /* Màu nền khi hover */
+      }
+
+      /* Ẩn navbar khi màn hình nhỏ */
+      @media (max-width: 992px) {
+        .navbar-nav {
+          display: none;
+          /* Ẩn các mục trong navbar */
         }
 
-        .circle-button {
-            width: 60px;
-            /* Đường kính hình tròn */
-            height: 60px;
-            /* Đường kính hình tròn */
-            border-radius: 50%;
-            /* Tạo hình tròn */
-            background-color: rgb(0 0 0 / 50%);
-            /* Màu nền */
-            color: white;
-            /* Màu chữ */
-            display: flex;
-            /* Hiển thị dưới dạng flex để căn giữa */
-            justify-content: center;
-            /* Căn giữa nội dung theo chiều ngang */
-            align-items: center;
-            /* Căn giữa nội dung theo chiều dọc */
-            text-decoration: none;
-            /* Xóa gạch chân */
-            font-size: 11px;
-            /* Kích thước chữ */
-            text-transform: uppercase;
+        .navbar-toggler {
+          display: none;
+          /* Ẩn nút toggle */
         }
+      }
 
+      p {
+        word-break: break-word;
+      }
 
-        .fb-button {
+      .section-heading {
+        transition: color 0.3s ease, transform 0.7s ease;
+        /* Thêm hiệu ứng chuyển tiếp cho màu sắc và kích thước */
+      }
 
-            /* Đường kính hình tròn */
+      .section-heading:hover {
+        color: #0056b3;
+        /* Đổi màu khi hover */
+        transform: scale(1.1);
+        /* Tăng kích thước khi hover */
+      }
 
-            /* Đường kính hình tròn */
-
-            /* Tạo hình tròn */
-
-            /* Màu nền */
-            color: rgb(26, 34, 255);
-            /* Màu chữ */
-            display: flex;
-            /* Hiển thị dưới dạng flex để căn giữa */
-            justify-content: center;
-            /* Căn giữa nội dung theo chiều ngang */
-            align-items: center;
-            /* Căn giữa nội dung theo chiều dọc */
-            text-decoration: none;
-            /* Xóa gạch chân */
-            font-size: 20px;
-            /* Kích thước chữ */
-            text-transform: uppercase;
-        }
-
-        .circle-button:hover {
-            background-color: #0056b3;
-            /* Màu nền khi hover */
-        }
-
-        /* Ẩn navbar khi màn hình nhỏ */
-        @media (max-width: 992px) {
-            .navbar-nav {
-                display: none;
-                /* Ẩn các mục trong navbar */
-            }
-
-            .navbar-toggler {
-                display: none;
-                /* Ẩn nút toggle */
-            }
-        }
-
-        p {
-            word-break: break-word;
-        }
-
-        .section-heading {
-            transition: color 0.3s ease, transform 0.7s ease;
-            /* Thêm hiệu ứng chuyển tiếp cho màu sắc và kích thước */
-        }
-
-        .section-heading:hover {
-            color: #0056b3;
-            /* Đổi màu khi hover */
-            transform: scale(1.1);
-            /* Tăng kích thước khi hover */
-        }
-
-        .logo-image {
-            width: 50px;
-            /* Kích thước logo nhỏ */
-            height: 50px;
-            /* Kích thước logo nhỏ */
-            border-radius: 50%;
-            /* Làm tròn */
-            margin-right: 5px;
-            /* Khoảng cách giữa logo và tên */
-            object-fit: cover;
-            /* Đảm bảo hình ảnh không bị méo */
-            vertical-align: middle;
-            /* Căn giữa logo với văn bản */
-        }
+      .logo-image {
+        width: 50px;
+        /* Kích thước logo nhỏ */
+        height: 50px;
+        /* Kích thước logo nhỏ */
+        border-radius: 50%;
+        /* Làm tròn */
+        margin-right: 5px;
+        /* Khoảng cách giữa logo và tên */
+        object-fit: cover;
+        /* Đảm bảo hình ảnh không bị méo */
+        vertical-align: middle;
+        /* Căn giữa logo với văn bản */
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1 class="site-heading text-center text-faded d-none d-lg-block">
-            <img src="img/logo.png" alt="Logo" class="logo-image">
-            <span class="site-heading-upper text-primary mb-3" style="margin-top: 5px;">Đi Muôn Nơi</span>
-            <span class="site-heading-lower">Cần Thơ</span>
-
-        </h1>
+      <h1 class="site-heading text-center text-faded d-none d-lg-block">
+        <img src="img/logo.png" alt="Logo" class="logo-image" />
+        <span
+          class="site-heading-upper text-primary mb-3"
+          style="margin-top: 5px"
+          >Đi Muôn Nơi</span
+        >
+        <span class="site-heading-lower">Cần Thơ</span>
+      </h1>
     </header>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand text-uppercase fw-bold d-lg-none" style="margin-left: 10px;" href="index.html">
-                <img src="img/logo.png" alt="Logo" class="logo-image"> Đi Muôn Nơi
-            </a>
+      <div class="container">
+        <a
+          class="navbar-brand text-uppercase fw-bold d-lg-none"
+          style="margin-left: 10px"
+          href="index.html"
+        >
+          <img src="img/logo.png" alt="Logo" class="logo-image" /> Đi Muôn Nơi
+        </a>
 
-            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="eat.html">Junket</a></li>
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="hotel.html">Hotel</a></li>
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="more.html">Location</a></li>
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="meoDuLich.html">Tips</a></li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link" href="https://www.facebook.com/profile.php?id=61567367394026"
-                            target="_blank" style="color: rgb(26, 34, 255);">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                    </li>
-
-
-                </ul>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase" href="index.html">Home</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase" href="eat.html">Junket</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase" href="hotel.html">Hotel</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase" href="more.html">Location</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase" href="meoDuLich.html">Tips</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase" href="design.html">Design</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a
+                class="nav-link"
+                href="https://www.facebook.com/profile.php?id=61567367394026"
+                target="_blank"
+                style="color: rgb(26, 34, 255)"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-
     <div class="circle-buttons d-lg-none">
-        <a href="index.html" class="circle-button">Home</a>
-        <a href="eat.html" class="circle-button">Junket</a>
-        <a href="hotel.html" class="circle-button">Hotel</a>
-        <a href="more.html" class="circle-button">Location</a>
-        <a href="meoDuLich.html" class="circle-button">Tips</a>
-        <a href="https://www.facebook.com/profile.php?id=61567367394026" class="fb-button"> <i
-                class="fa-brands fa-facebook"></i></a>
+      <a href="index.html" class="circle-button">Home</a>
+      <a href="eat.html" class="circle-button">Junket</a>
+      <a href="hotel.html" class="circle-button">Hotel</a>
+      <a href="more.html" class="circle-button">Location</a>
+      <a href="meoDuLich.html" class="circle-button">Tips</a>
+      <a href="design.html" class="circle-button">Design</a>
+      <a
+        href="https://www.facebook.com/profile.php?id=61567367394026"
+        class="fb-button"
+      >
+        <i class="fa-brands fa-facebook"></i
+      ></a>
     </div>
 
-
-
     <section class="page-section cta">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-9 mx-auto">
-                    <div class="cta-inner bg-faded text-center rounded">
-                        <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">Sủi Cảo A Chảy – Quán ngon Cần Thơ
-                            </span>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner bg-faded text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper"
+                  >Sủi Cảo A Chảy – Quán ngon Cần Thơ
+                </span>
+              </h2>
+              <p class="mb-0">
+                Địa chỉ: 38 Nguyễn An Ninh, Quận Ninh Kiều, Cần Thơ<br />
+                Giờ mở cửa: 08:00 – 22:00<br />
+                Giá trung bình: 13.000đ – 50.000đ
+              </p>
 
-                        </h2>
-                        <p class="mb-0">
-                            Địa chỉ: 38 Nguyễn An Ninh, Quận Ninh Kiều, Cần Thơ<br>
-                            Giờ mở cửa: 08:00 – 22:00<br>
-                            Giá trung bình: 13.000đ – 50.000đ
-
-
-                        </p>
-
-                        <!-- Bắt đầu Carousel -->
-                        <!-- <div id="imageCarousel" class="carousel slide mt-4" data-ride="carousel">
+              <!-- Bắt đầu Carousel -->
+              <!-- <div id="imageCarousel" class="carousel slide mt-4" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
                                 <li data-target="#imageCarousel" data-slide-to="1"></li>
@@ -241,31 +276,29 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div> -->
-
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="page-section cta">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-9 mx-auto">
-                    <div class="cta-inner bg-faded text-center rounded">
-                        <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">Pizza Candle
-                            </span>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner bg-faded text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Pizza Candle </span>
+              </h2>
+              <p class="mb-0">
+                Địa chỉ: 138 Đường 3 Tháng 2, P. Xuân Khánh, Quận Ninh Kiều, Cần
+                Thơ<br />
+                Giờ mở cửa: 09:00 – 22:00<br />
+                Giá trung bình: 50.000đ – 100.000đ
+              </p>
 
-                        </h2>
-                        <p class="mb-0">
-                            Địa chỉ: 138 Đường 3 Tháng 2, P. Xuân Khánh, Quận Ninh Kiều, Cần Thơ<br>
-                            Giờ mở cửa: 09:00 – 22:00<br>
-                            Giá trung bình: 50.000đ – 100.000đ
-                        </p>
-
-                        <!-- Bắt đầu Carousel -->
-                        <!-- <div id="imageCarousel" class="carousel slide mt-4" data-ride="carousel">
+              <!-- Bắt đầu Carousel -->
+              <!-- <div id="imageCarousel" class="carousel slide mt-4" data-ride="carousel">
                         
                             <ol class="carousel-indicators">
                                 <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
@@ -296,31 +329,28 @@
                             </a>
                         </div>
                 -->
-
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-
     <section class="page-section cta">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-9 mx-auto">
-                    <div class="cta-inner bg-faded text-center rounded">
-                        <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">Nem Nướng Cái Răng
-                            </span>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner bg-faded text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Nem Nướng Cái Răng </span>
+              </h2>
+              <p class="mb-0">
+                Địa chỉ tham khảo: 2/1 Đường 3 Tháng 2, P. An Bình, Quận Ninh
+                Kiều, Cần Thơ<br />
+                Giá tham khảo: 25.000 – 50.000 đồng
+              </p>
 
-                        </h2>
-                        <p class="mb-0">
-                            Địa chỉ tham khảo: 2/1 Đường 3 Tháng 2, P. An Bình, Quận Ninh Kiều, Cần Thơ<br>
-                            Giá tham khảo: 25.000 – 50.000 đồng
-                        </p>
-
-                        <!-- Bắt đầu Carousel -->
-                        <!-- <div id="imageCarousel" class="carousel slide mt-4" data-ride="carousel">
+              <!-- Bắt đầu Carousel -->
+              <!-- <div id="imageCarousel" class="carousel slide mt-4" data-ride="carousel">
                           
                             <ol class="carousel-indicators">
                                 <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
@@ -349,39 +379,35 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div> -->
-
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-    <br>
+    <br />
     <section class="page-section cta">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-9 mx-auto">
-                    <div class="cta-inner bg-faded text-center rounded">
-                        <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">Bánh xèo 7 Tới
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner bg-faded text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Bánh xèo 7 Tới </span>
+              </h2>
+              <p class="mb-0">
+                Địa chỉ tham khảo: 2/1 Đường 3 Tháng 2, P. An Bình, Quận Ninh
+                Kiều, Cần Thơ<br />
+                Giá tham khảo: 25.000 – 50.000 đồng
+              </p>
 
-                            </span>
-
-                        </h2>
-                        <p class="mb-0">
-                            Địa chỉ tham khảo: 2/1 Đường 3 Tháng 2, P. An Bình, Quận Ninh Kiều, Cần Thơ<br>
-                            Giá tham khảo: 25.000 – 50.000 đồng
-
-                        </p>
-
-                        <!-- Bắt đầu Carousel -->
-                        <!-- <div id="imageCarousel" class="carousel slide mt-4" data-ride="carousel">
+              <!-- Bắt đầu Carousel -->
+              <!-- <div id="imageCarousel" class="carousel slide mt-4" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
                                 <li data-target="#imageCarousel" data-slide-to="1"></li>
                                 <li data-target="#imageCarousel" data-slide-to="2"></li>
                             </ol> -->
 
-                        <!-- <div class="carousel-inner">
+              <!-- <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <img class="d-block w-100 img-fluid rounded" src="img/canTho.png" alt="Hình 1">
                                 </div>
@@ -402,33 +428,29 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div> -->
-
-
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="page-section cta">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-9 mx-auto">
-                    <div class="cta-inner bg-faded text-center rounded">
-                        <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">Bò nướng ngói Cù Lần
-                            </span>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner bg-faded text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Bò nướng ngói Cù Lần </span>
+              </h2>
+              <p class="mb-0">
+                Địa chỉ: CS1: 88/19A Đường Đề Thám, quận Ninh Kiều, TP. Cần Thơ;
+                CS2: C140 – C141 Hẻm 15 Trần Văn Hoài, quận Ninh Kiều, TP. Cần
+                Thơ<br />
+                Giờ mở cửa: 15:00- 22:30<br />
+                Giá tham khảo: 80.000 – 150.000Đ/người
+              </p>
 
-                        </h2>
-                        <p class="mb-0">
-                            Địa chỉ: CS1: 88/19A Đường Đề Thám, quận Ninh Kiều, TP. Cần Thơ; CS2: C140 – C141 Hẻm
-                            15
-                            Trần Văn Hoài, quận Ninh Kiều, TP. Cần Thơ<br>
-                            Giờ mở cửa: 15:00- 22:30<br>
-                            Giá tham khảo: 80.000 – 150.000Đ/người
-                        </p>
-
-                        <!-- <div id="imageCarousel" class="carousel slide mt-4" data-ride="carousel">
+              <!-- <div id="imageCarousel" class="carousel slide mt-4" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
                                 <li data-target="#imageCarousel" data-slide-to="1"></li>
@@ -456,23 +478,18 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div> -->
-
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-
-
-
-
 
     <a href="#" class="bottom-right-button">^</a>
 
     <footer class="footer text-faded text-center py-3">
-        <div class="container">
-            <p class="m-0 small">Copyright &copy; by DiMuonNoi</p>
-        </div>
+      <div class="container">
+        <p class="m-0 small">Copyright &copy; by DiMuonNoi</p>
+      </div>
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -484,6 +501,5 @@
 
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-</body>
-
+  </body>
 </html>
