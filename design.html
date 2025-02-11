@@ -305,6 +305,27 @@ document.addEventListener(
   },
   { passive: false }
 );
+let isTouchDragging = false;
+
+document.addEventListener("touchstart", function (event) {
+  // Kiểm tra nếu chạm vào một ảnh trong danh sách
+  if (event.target.tagName === "IMG" && event.target.closest(".image-selection")) {
+    isTouchDragging = true;
+    document.body.style.overflow = "hidden"; // Ngăn cuộn trang khi kéo
+    event.preventDefault(); // Ngăn chặn hành động mặc định
+  }
+});
+
+document.addEventListener("touchmove", function (event) {
+  if (isTouchDragging) {
+    event.preventDefault(); // Ngăn cuộn trang
+  }
+}, { passive: false });
+
+document.addEventListener("touchend", function () {
+  isTouchDragging = false;
+  document.body.style.overflow = ""; // Cho phép cuộn lại khi thả
+});
 
 
 
