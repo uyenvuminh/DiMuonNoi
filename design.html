@@ -283,6 +283,28 @@ function deleteSelectedImage() {
     }
 }
 
+let isDragging = false;
+
+document.addEventListener("dragstart", function () {
+  isDragging = true;
+  document.body.style.overflow = "hidden"; // Ngăn cuộn trang khi kéo
+});
+
+document.addEventListener("dragend", function () {
+  isDragging = false;
+  document.body.style.overflow = ""; // Cho phép cuộn lại khi thả
+});
+
+// Ngăn cuộn trên điện thoại khi kéo thả
+document.addEventListener(
+  "touchmove",
+  function (event) {
+    if (isDragging) {
+      event.preventDefault();
+    }
+  },
+  { passive: false }
+);
 
 
 
