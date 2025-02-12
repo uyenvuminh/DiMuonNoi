@@ -69,85 +69,83 @@
 
       .circle-buttons {
         position: fixed;
-        /* Đặt vị trí cố định */
         top: 20px;
-        /* Khoảng cách từ đỉnh màn hình */
         right: 20px;
-        /* Khoảng cách từ bên phải màn hình */
         z-index: 1000;
-        /* Đặt z-index cao để chúng luôn hiển thị trên cùng */
         display: flex;
-        /* Sử dụng flex để sắp xếp các button */
         flex-direction: column;
-        /* Sắp xếp theo chiều dọc */
         gap: 10px;
-        /* Khoảng cách giữa các button */
+        opacity: 0.7;
       }
 
+      /* Mặc định chỉ hiển thị Home & Design */
       .circle-button {
         width: 60px;
-        /* Đường kính hình tròn */
         height: 60px;
-        /* Đường kính hình tròn */
         border-radius: 50%;
-        /* Tạo hình tròn */
-        background-color: rgb(0 0 0 / 50%);
-        /* Màu nền */
+        background-color: rgba(0, 0, 0, 0.3);
         color: white;
-        /* Màu chữ */
-        display: flex;
-        /* Hiển thị dưới dạng flex để căn giữa */
+        display: none;
         justify-content: center;
-        /* Căn giữa nội dung theo chiều ngang */
         align-items: center;
-        /* Căn giữa nội dung theo chiều dọc */
         text-decoration: none;
-        /* Xóa gạch chân */
         font-size: 11px;
-        /* Kích thước chữ */
         text-transform: uppercase;
-      }
-
-      .fb-button {
-        /* Đường kính hình tròn */
-
-        /* Đường kính hình tròn */
-
-        /* Tạo hình tròn */
-
-        /* Màu nền */
-        color: rgb(26, 34, 255);
-        /* Màu chữ */
-        display: flex;
-        /* Hiển thị dưới dạng flex để căn giữa */
-        justify-content: center;
-        /* Căn giữa nội dung theo chiều ngang */
-        align-items: center;
-        /* Căn giữa nội dung theo chiều dọc */
-        text-decoration: none;
-        /* Xóa gạch chân */
-        font-size: 20px;
-        /* Kích thước chữ */
-        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.3s ease;
       }
 
       .circle-button:hover {
-        background-color: #0056b3;
-        /* Màu nền khi hover */
+        background-color: rgba(84, 84, 84, 0.5); /* Màu xanh có độ trong suốt */
+        transform: scale(1.1);
+        opacity: 1;
       }
 
-      /* Ẩn navbar khi màn hình nhỏ */
-      @media (max-width: 992px) {
-        .navbar-nav {
-          display: none;
-          /* Ẩn các mục trong navbar */
-        }
 
-        .navbar-toggler {
-          display: none;
-          /* Ẩn nút toggle */
-        }
-      }
+/* Home và Design luôn hiển thị */
+.circle-buttons .circle-button[href="index.html"],
+.circle-buttons .circle-button[href="Design.html"] {
+    display: flex;
+    background-color: #666666;
+    position: relative;
+}
+
+/* Đẩy nút Design xuống dưới Home để không bị đè */
+.circle-buttons .circle-button[href="Design.html"] {
+    margin-top: 70px;
+}
+
+/* Hover vào Home trên PC thì hiển thị các nút khác */
+@media (min-width: 992px) {
+    .circle-buttons:hover .circle-button {
+        display: flex;
+    }
+}
+
+/* Khi bấm vào Home trên điện thoại, hiển thị các nút khác bên trái */
+@media (max-width: 991px) {
+    .circle-buttons.active .circle-button {
+        display: flex;
+     
+    }
+}
+
+/* Giữ Tips luôn hiển thị */
+.circle-buttons .circle-button[href="design.html"] {
+    display: flex;
+}
+
+
+
+.fb-button {
+    color: rgb(26, 34, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
 
       p {
         word-break: break-word;
@@ -179,6 +177,68 @@
         vertical-align: middle;
         /* Căn giữa logo với văn bản */
       }
+
+
+
+      body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 20px;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 20px auto;
+        }
+
+        button {
+            background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 3px 3px 8px #1a1a1a, -3px -3px 8px #2c2c2c;
+        }
+
+        button:hover {
+            background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+
+
+
+        .button-container {
+    text-align: center;
+    margin-top: 20px; /* Khoảng cách với canvas */
+}
+
+.fanpage-btn {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.fanpage-btn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
     </style>
   </head>
   <body>
@@ -221,12 +281,15 @@
         </div>
     </nav>
     <div class="circle-buttons d-lg-none">
-        <a href="index.html" class="circle-button">Home</a>
+        <a href="index.html" class="circle-button">Travel</a>
         <a href="eat.html" class="circle-button">Junket</a>
         <a href="hotel.html" class="circle-button">Hotel</a>
         <a href="more.html" class="circle-button">Location</a>
         <a href="meoDuLich.html" class="circle-button">Tips</a>
         <a href="design.html" class="circle-button">Design</a>
+        <a href="index.html" class="circle-button">Order</a>
+        <a href="index.html" class="circle-button">Home</a>
+        
         <a href="https://www.facebook.com/profile.php?id=61567367394026" class="fb-button"> <i
                 class="fa-brands fa-facebook"></i></a>
     </div>
@@ -247,10 +310,10 @@
       />
     </div>
     <input type="file" id="upload" accept="image/*" />
-    <button onclick="addText()">Thêm Chữ</button>
-    <button onclick="exportImage()">Xuất ảnh</button>
+    <button onclick="addText()">Add text</button>
+    <button onclick="exportImage()">Download</button>
 
-    <button onclick="deleteSelectedImage()">Xóa hình</button>
+    <button onclick="deleteSelectedImage()">Delete</button>
 
 
 
@@ -263,7 +326,21 @@
     
     ></canvas>
 
+
+    <div class="button-container">
+      <a id="fanpageLink" href="https://www.facebook.com/people/%C4%90i-Mu%C3%B4n-N%C6%A1i/61567367394026/" target="_blank">
+          <button class="fanpage-btn">Order</button>
+      </a>
+  </div>
+  
+
+    
     <script>
+
+
+
+
+
 let selectedElement = null;
 
 document.getElementById("canvas-container").addEventListener("click", function (event) {
@@ -531,6 +608,17 @@ document.addEventListener("touchend", function () {
 
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
-
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      let homeButton = document.querySelector(".circle-button[href='index.html']");
+      let buttonsContainer = document.querySelector(".circle-buttons");
+  
+      homeButton.addEventListener("click", function (event) {
+          event.preventDefault(); // Ngăn chặn load lại trang
+          buttonsContainer.classList.toggle("active");
+      });
+  });
+  </script>
+  
   </body>
 </html>

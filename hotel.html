@@ -36,89 +36,85 @@
             margin: 5px;
             cursor: pointer;
         }
-
         .circle-buttons {
-            position: fixed;
-            /* Đặt vị trí cố định */
-            top: 20px;
-            /* Khoảng cách từ đỉnh màn hình */
-            right: 20px;
-            /* Khoảng cách từ bên phải màn hình */
-            z-index: 1000;
-            /* Đặt z-index cao để chúng luôn hiển thị trên cùng */
-            display: flex;
-            /* Sử dụng flex để sắp xếp các button */
-            flex-direction: column;
-            /* Sắp xếp theo chiều dọc */
-            gap: 10px;
-            /* Khoảng cách giữa các button */
-        }
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        opacity: 0.7;
+      }
 
-        .circle-button {
-            width: 60px;
-            /* Đường kính hình tròn */
-            height: 60px;
-            /* Đường kính hình tròn */
-            border-radius: 50%;
-            /* Tạo hình tròn */
-            background-color: rgb(0 0 0 / 50%);
-            /* Màu nền */
-            color: white;
-            /* Màu chữ */
-            display: flex;
-            /* Hiển thị dưới dạng flex để căn giữa */
-            justify-content: center;
-            /* Căn giữa nội dung theo chiều ngang */
-            align-items: center;
-            /* Căn giữa nội dung theo chiều dọc */
-            text-decoration: none;
-            /* Xóa gạch chân */
-            font-size: 11px;
-            /* Kích thước chữ */
-            text-transform: uppercase;
-        }
+      /* Mặc định chỉ hiển thị Home & Design */
+      .circle-button {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-size: 11px;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
 
-        .circle-button:hover {
-            background-color: #0056b3;
-            /* Màu nền khi hover */
-        }
+      .circle-button:hover {
+        background-color: rgba(84, 84, 84, 0.5); /* Màu xanh có độ trong suốt */
+        transform: scale(1.1);
+        opacity: 1;
+      }
 
-        /* Ẩn navbar khi màn hình nhỏ */
-        @media (max-width: 992px) {
-            .navbar-nav {
-                display: none;
-                /* Ẩn các mục trong navbar */
-            }
 
-            .navbar-toggler {
-                display: none;
-                /* Ẩn nút toggle */
-            }
-        }
+/* Home và Design luôn hiển thị */
+.circle-buttons .circle-button[href="index.html"],
+.circle-buttons .circle-button[href="Design.html"] {
+    display: flex;
+    background-color: #666666;
+    position: relative;
+}
 
-        .fb-button {
+/* Đẩy nút Design xuống dưới Home để không bị đè */
+.circle-buttons .circle-button[href="Design.html"] {
+    margin-top: 70px;
+}
 
-            /* Đường kính hình tròn */
+/* Hover vào Home trên PC thì hiển thị các nút khác */
+@media (min-width: 992px) {
+    .circle-buttons:hover .circle-button {
+        display: flex;
+    }
+}
 
-            /* Đường kính hình tròn */
+/* Khi bấm vào Home trên điện thoại, hiển thị các nút khác bên trái */
+@media (max-width: 991px) {
+    .circle-buttons.active .circle-button {
+        display: flex;
+     
+    }
+}
 
-            /* Tạo hình tròn */
+/* Giữ Tips luôn hiển thị */
+.circle-buttons .circle-button[href="design.html"] {
+    display: flex;
+}
 
-            /* Màu nền */
-            color: rgb(26, 34, 255);
-            /* Màu chữ */
-            display: flex;
-            /* Hiển thị dưới dạng flex để căn giữa */
-            justify-content: center;
-            /* Căn giữa nội dung theo chiều ngang */
-            align-items: center;
-            /* Căn giữa nội dung theo chiều dọc */
-            text-decoration: none;
-            /* Xóa gạch chân */
-            font-size: 20px;
-            /* Kích thước chữ */
-            text-transform: uppercase;
-        }
+
+.fb-button {
+    color: rgb(26, 34, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+
 
         p {
             word-break: break-word;
@@ -130,7 +126,7 @@
             }
 
             25% {
-                box-shadow: 10px 10px 0 rgba(255, 165, 0, 0.7);
+                box-shadow: 10px 10px 0 rgba(66, 48, 16, 0.7);
             }
 
             50% {
@@ -224,11 +220,14 @@
         </div>
     </nav>
     <div class="circle-buttons d-lg-none">
-        <a href="index.html" class="circle-button">Home</a>
+        <a href="index.html" class="circle-button">Travel</a>
         <a href="eat.html" class="circle-button">Junket</a>
         <a href="hotel.html" class="circle-button">Hotel</a>
         <a href="more.html" class="circle-button">Location</a>
         <a href="meoDuLich.html" class="circle-button">Tips</a>
+        <a href="design.html" class="circle-button">Design</a>
+        <a href="index.html" class="circle-button">Order</a>
+        <a href="index.html" class="circle-button">Home</a>
         <a href="https://www.facebook.com/profile.php?id=61567367394026" class="fb-button"> <i
                 class="fa-brands fa-facebook"></i></a>
     </div>
@@ -314,162 +313,8 @@
             </div>
         </div>
     </section>
-   
-    <div class="image-selection">
-        <img src="https://th.bing.com/th/id/OIP.RM-SGSahL20cdhlR188gwgHaHZ?w=169&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" onclick="addPresetImage(this.src)">
-        <img src="https://th.bing.com/th/id/OIP.tmfa5CnxXEh0J5cNLNWVKwHaEK?w=272&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" onclick="addPresetImage(this.src)">
-        <img src="https://via.placeholder.com/100/00ff00" onclick="addPresetImage(this.src)">
-    </div>
-    <input type="file" id="upload" accept="image/*">
-    <button onclick="addText()">Thêm Chữ</button>
-    <button onclick="exportImage()">Xuất ảnh</button>
-    <div id="canvas-container"></div>
-    <canvas id="exportCanvas" width="800" height="500" style="display: none;"></canvas>
+  
     
-    <script>
-        document.getElementById('upload').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    addPresetImage(e.target.result);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    
-        function loadImageFromUrl(url, callback) {
-            fetch(url)
-                .then(response => response.blob())
-                .then(blob => {
-                    const reader = new FileReader();
-                    reader.onloadend = () => {
-                        callback(reader.result); // trả về base64
-                    };
-                    reader.readAsDataURL(blob);
-                })
-                .catch(err => console.error("Lỗi tải hình ảnh URL:", err));
-        }
-    
-        function addPresetImage(src) {
-            const img = document.createElement('img');
-    
-            if (src.startsWith("http")) {
-                // lấy URL, tải về  dạng base64
-                loadImageFromUrl(src, (base64) => {
-                    img.src = base64;
-                    img.classList.add('draggable');
-                    img.style.width = '150px';
-                    img.style.top = '10px';
-                    img.style.left = '10px';
-                    makeDraggable(img);
-                    document.getElementById('canvas-container').appendChild(img);
-                });
-            } else {
-                //file tải lên, dùng src
-                img.src = src;
-                img.classList.add('draggable');
-                img.style.width = '150px';
-                img.style.top = '10px';
-                img.style.left = '10px';
-                makeDraggable(img);
-                document.getElementById('canvas-container').appendChild(img);
-            }
-        }
-    
-        function addText() {
-            const textDiv = document.createElement('div');
-            textDiv.contentEditable = true;
-            textDiv.textContent = 'nhập chữ tại đây';
-            textDiv.classList.add('draggable');
-            textDiv.style.top = '50px';
-            textDiv.style.left = '50px';
-            textDiv.style.padding = '5px';
-            textDiv.style.border = '1px solid black';
-            textDiv.style.backgroundColor = 'white';
-            textDiv.style.fontSize = '20px';
-            textDiv.style.color = 'black';
-            textDiv.style.whiteSpace = 'nowrap';
-            makeDraggable(textDiv);
-            document.getElementById('canvas-container').appendChild(textDiv);
-        }
-    
-        function makeDraggable(element) {
-            let offsetX, offsetY, isDragging = false;
-    
-            // chạm bằng chuột máy tính
-            element.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                offsetX = e.clientX - element.offsetLeft;
-                offsetY = e.clientY - element.offsetTop;
-            });
-    
-            //chạm trên điện thoại
-            element.addEventListener('touchstart', (e) => {
-                isDragging = true;
-                const touch = e.touches[0];
-                offsetX = touch.clientX - element.offsetLeft;
-                offsetY = touch.clientY - element.offsetTop;
-            });
-    
-            // di chuyển
-            document.addEventListener('mousemove', (e) => {
-                if (isDragging) {
-                    element.style.left = (e.clientX - offsetX) + 'px';
-                    element.style.top = (e.clientY - offsetY) + 'px';
-                }
-            });
-    
-            // di chuyển trên điện thoại
-            document.addEventListener('touchmove', (e) => {
-                if (isDragging) {
-                    const touch = e.touches[0];
-                    element.style.left = (touch.clientX - offsetX) + 'px';
-                    element.style.top = (touch.clientY - offsetY) + 'px';
-                }
-            });
-    
-            // dừng kéo thả
-            document.addEventListener('mouseup', () => {
-                isDragging = false;
-            });
-    
-            // dừng kéo thả trên điện thoại
-            document.addEventListener('touchend', () => {
-                isDragging = false;
-            });
-        }
-    
-        function exportImage() {
-            const canvas = document.getElementById('exportCanvas');
-            const ctx = canvas.getContext('2d');
-            const container = document.getElementById('canvas-container');
-    
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-            const elements = Array.from(container.children);
-            elements.forEach(element => {
-                if (element.tagName === 'IMG') {
-                    ctx.drawImage(element, parseInt(element.style.left), parseInt(element.style.top), element.width, element.height);
-                } else if (element.contentEditable === 'true') {
-                    ctx.font = `${element.style.fontSize} Arial`;
-                    ctx.fillStyle = element.style.color;
-                    ctx.fillText(element.textContent, parseInt(element.style.left), parseInt(element.style.top) + parseInt(element.style.fontSize));
-                }
-            });
-    
-            setTimeout(() => {
-                const link = document.createElement('a');
-                link.download = 'dimuonnoi.png';
-                link.href = canvas.toDataURL('image/png');
-                link.click();
-            }, 500);
-        }
-    </script>
-    
-    
-
-
 
 
     <a href="#" class="bottom-right-button">^</a>
@@ -479,9 +324,27 @@
         </div>
     </footer>
     <!-- Bootstrap core JS-->
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let homeButton = document.querySelector(".circle-button[href='index.html']");
+            let buttonsContainer = document.querySelector(".circle-buttons");
+        
+            homeButton.addEventListener("click", function (event) {
+                event.preventDefault(); // Ngăn chặn load lại trang
+                buttonsContainer.classList.toggle("active");
+            });
+        });
+        </script>
+        
+
 </body>
 
 </html>
